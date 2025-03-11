@@ -1,0 +1,97 @@
+Definition of Ready: 
+
+A Definition of Ready (DoR) allows you to evaluate the work before a team starts on it, also means team can take immediate action on the stories, task if they met the DoR criteria.
+
+Team needs to know before initiating any work:
+
+Who are the target customers, motivations, pain points, and business requirement?
+What's the goal/purpose of the project? 
+Are the user stories valuable, both for the business and the user? Are they clear and feasible? 
+Technical requirements: Do they have the necessary resources? Do they understand the technical approach or solution? Can you test it?
+What's the timeline to complete the work? Have stakeholders and the team agreed on an end date?
+INVEST Criteria (Independent, Negotiable, Valuable, Estimable, Sizable, Testable)
+
+Was the story refined with team? Did team understand the requirements? Any open clarification pending internal or external? 
+User acceptance criteria is clearly defined. Are stories refined & defined granularly so that it fits within the sprint.
+Identify stories if they have any dependency, Separate the stories that have dependency or constraints. Tag those with dependency in the EJIRA.
+Break down the complex stories into smaller and make it independent stories as much as possible.
+Dependency with Internal (GWS) or External (Base24, Ocean, POS, etc.)
+Who is responsible for removing the dependency, Any ETA identified, will it impact Sprint / release / PI timelines?
+Will team able to finish before end of sprint? 
+Is there a RISK identified? If risk involved, should it be included in the sprint planning? 
+Does this story add value to business / release? 
+Is this story linked to the feature and the feature to the EPIC/Initiative?
+Validate stories with stakeholders to ensure they meet real business needs
+has this story been estimated using Fibonacci estimation technique
+Is this unit of story testable? Is the story sized so nimble enough to fit into a sprint if not, can it break further
+Any open specifications / format / Screen / related to API's b/w subsystems. Whenever external systems involved (B24, Ocean, etc..) validate the Specification is fully signed off by other systems and available prior taking it for Sprint.
+Any environment specific 
+Parallel development will happen in case of dependent stories with team's agreement to facilitate for the Delivery.
+
+
+Definition of Done: 
+
+A DoD is a set of criteria that a product increment must meet for the team to consider it complete and ready for customers. It is a shared understanding among the team members of when a product increment is ready for release, even when the increment is large and consists of many items. By clearly defining what “done” means to the project, an Agile team can focus on delivering value with every sprint and minimizing rework. 
+
+It is important to note that one person does not create the Definition of Done. Instead, it is agreed upon by the entire project team, including developers, testers, product owners, and other stakeholders. This ensures a smoother process during sprints since everyone is using the DoD as a guide alongside any checklists before marking an item as complete.
+
+
+
+Created by Unknown User (f8pgvf4), last modified by Unknown User (f87yu3r) on Oct 16, 2018
+DESCRIPTION: This sheet provides three KPIs/measures related to the resolution time of a Defect in SDLC JIRA.
+
+DATA SOURCES: JIRA
+
+FILTERS:
+Filters can be applied from previous sheets
+
+Issue Created Year: The created year of the defect.
+Issue Completed Year: The completed year of the defect.
+Severity: The severity of the defect. The list of values is Critical,Major,Minor,Moderate and Cosmetic.
+Component: Represents workstream or application. It is retrieved from Component field of Defects from SDLC JIRA.  Each RQS or FT has a predefined list of components
+Root cause: The root cause of the defect: None, Clarification,Code,Configuration,Data,Documentation,Environment,Others.
+Delivery Organization: The organization that delivers the defect.
+ Filters can be applied in the Selections tool in the Top right
+
+DATA SET:
+
+All the KPIs are measured against Defects/TC that their parent RQS/FT are not in Canceled status.
+All the KPIs are measured against Defects/TC that their parent RQS/FT include at least 1 test case.
+The created date of the last Test Case (TC) linked with RQS/ FT should be later than 1/3/2017 (Unique Organization's roll out date for defects)
+ 
+*Notes:
+
+If an RQS has 2 Test cases, which are linked with 10 and 20 defects respectively and the first TC was created at 1/2/2017 and the other one at 2/3/2017, all test cases and defects will be taken into account.
+If a defect is not linked to an RQS or FT, it is not eligible to be included in Defect metrics. 
+KPIs/MEASURES:
+Avg Defect duration days	
+The average Defect duration from Open to Closed status in Days.
+
+It includes the duration of statuses Open, Analysis, Build, Fixed, Deployment, Retesting, Acceptance, Reopened
+
+The measure is calculated only for Defects, which are in Closed status and have resolution equal to Resolved, Duplicate, Rejected and Rescope.
+
+Avg Defect fixing duration days	
+The average duration the developer is working on a defect in Days.
+
+It includes the duration of statuses Open, Analysis, Build, Fixed, Deployment, Reopened
+
+The measure is calculated only for Defects, which are in Closed status and have resolution equal to Resolved, Duplicate, Rejected and Rescope.
+
+Avg Defect testing duration days	
+The average duration the tester is working to validate the resolution of a defect.
+
+It includes the duration of statuses Retesting, Acceptance
+
+The measure is calculated only for Defects, which are in Closed status and have resolution equal to Resolved, Duplicate, Rejected and Rescope.
+
+CHARTS:
+
+Top 10 Average Defect Duration per Component	Treemap	
+Provides the first 10 components that have the highest value of measure: Average Defect Duration.
+
+The last component by the name 'Others ' includes the avg duration of the rest.
+
+Average Defect Fixing & Testing Duration by Severity	Bar Chart	Provides the Average Defect Fixing and Testing Duration, per Severity.
+No. of Closed Defects & Average Duration Days by Resolved Month	Bar Chart	Provides the Average Defect Duration and the total count of closed defects, per resolved month.
+Average Defect Fixing & Testing Duration Days by Resolved Month	Bar Chart	Provide the Average Defect Fixing and Testing Duration, per resolved month.
